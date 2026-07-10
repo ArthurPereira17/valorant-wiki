@@ -8,7 +8,7 @@ export default function ArmaDetalhe() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/armas")
+    fetch("https://valorant-wiki-fmzs.onrender.com/armas")
       .then(r => r.json())
       .then(data => {
         const encontrada = data.data.find(a => a.displayName.toLowerCase() === nome.toLowerCase())

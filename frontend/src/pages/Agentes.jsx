@@ -11,7 +11,7 @@ export default function Agentes() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/agentes")
+    fetch("https://valorant-wiki-fmzs.onrender.com/agentes")
       .then(r => r.json())
       .then(data => {
         setAgentes(data.data)

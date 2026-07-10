@@ -17,8 +17,8 @@ export default function Jogador() {
 
     try {
       const [perfil, agentes] = await Promise.all([
-        fetch(`http://127.0.0.1:8000/jogador/${nick}/${tag}`).then(r => r.json()),
-        fetch(`http://127.0.0.1:8000/jogador/${nick}/${tag}/agentes`).then(r => r.json()),
+        fetch(`https://valorant-wiki-fmzs.onrender.com/jogador/${nick}/${tag}`).then(r => r.json()),
+        fetch(`https://valorant-wiki-fmzs.onrender.com/jogador/${nick}/${tag}/agentes`).then(r => r.json()),
       ])
 
       if (perfil.status !== 200) {

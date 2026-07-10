@@ -5,7 +5,7 @@ export default function Mapas() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/mapas")
+    fetch("https://valorant-wiki-fmzs.onrender.com/mapas")
       .then(r => r.json())
       .then(data => {
         const filtrados = data.data.filter(m => m.displayName && m.splash)

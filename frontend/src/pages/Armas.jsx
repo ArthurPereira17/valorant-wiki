@@ -8,7 +8,7 @@ export default function Armas() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/armas")
+    fetch("https://valorant-wiki-fmzs.onrender.com/armas")
       .then(r => r.json())
       .then(data => { setArmas(data.data); setLoading(false) })
   }, [])

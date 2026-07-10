@@ -8,7 +8,7 @@ export default function AgenteDetalhe() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/agentes/${nome}`)
+    fetch(`https://valorant-wiki-fmzs.onrender.com/agentes/${nome}`)
       .then(r => r.json())
       .then(data => { setAgente(data); setLoading(false) })
   }, [nome])
