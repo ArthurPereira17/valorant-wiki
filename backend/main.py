@@ -6,7 +6,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5174", "https://valorant-wiki.vercel.app"],
+    allow_origins=["http://localhost:5174", "https://valorant-wiki-topaz.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
