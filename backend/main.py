@@ -14,7 +14,6 @@ app.add_middleware(
 BASE_URL = "https://valorant-api.com/v1"
 HENRIK_KEY = "HDEV-ab42080b-a9a4-45c5-800c-9b5f09d196fd"
 HENRIK_URL = "https://api.henrikdev.xyz"
-
 HEADERS_HENRIK = {"Authorization": HENRIK_KEY}
 
 @app.get("/agentes")
@@ -59,28 +58,10 @@ async def stats_agentes_jogador(nick: str, tag: str):
             f"{HENRIK_URL}/valorant/v2/mmr/pc/br/{nick}/{tag}",
             headers=HEADERS_HENRIK
         )
-        mmr = res.json()
-
-        res2 = await client.get(
-            f"{HENRIK_URL}/valorant/v1/stored-matches/pc/br/{nick}/{tag}?mode=competitive&size=20",
-            headers=HEADERS_HENRIK
-        )
-        matches = res2.json()
-
-        agente_stats = {}
-        for match in matches.get("data", []):
-            agente = match.get("meta", {}).get("agent", {}).get("name")
-            won = match.get("teams", {}).get("red", {}).get("won") or match.get("teams", {}).get("blue", {}).get("won")
-            if agente:
-                if agente not in agente_stats:
-                    agente_stats[agente] = {"partidas": 0, "vitorias": 0}
-                agente_stats[agente]["partidas"] += 1
-
-        return {"mmr": mmr, "agente_stats": agente_stats}
+        mmr =
 BASE_URL = "https://valorant-api.com/v1"
 HENRIK_KEY = "HDEV-ab42080b-a9a4-45c5-800c-9b5f09d196fd"
 HENRIK_URL = "https://api.henrikdev.xyz"
-
 HEADERS_HENRIK = {"Authorization": HENRIK_KEY}
 
 @app.get("/agentes")
@@ -136,7 +117,6 @@ async def stats_agentes_jogador(nick: str, tag: str):
         agente_stats = {}
         for match in matches.get("data", []):
             agente = match.get("meta", {}).get("agent", {}).get("name")
-            won = match.get("teams", {}).get("red", {}).get("won") or match.get("teams", {}).get("blue", {}).get("won")
             if agente:
                 if agente not in agente_stats:
                     agente_stats[agente] = {"partidas": 0, "vitorias": 0}
